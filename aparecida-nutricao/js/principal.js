@@ -17,12 +17,14 @@ for (let paciente of pacientes) {
         console.log("Peso inválido");
         var pesoEhValido = false;
         tdImc.textContent = "Peso inválido"
+        paciente.classList.add("paciente-invalido")
     }
 
     if (altura <= 0 || altura > 3.00) {
         console.log("Altura inválido");
         var alturaEhValida = false;
         tdImc.textContent = "Altura inválido"
+        paciente.classList.add("paciente-invalido")
     }
 
     if (alturaEhValida && pesoEhValido) {
