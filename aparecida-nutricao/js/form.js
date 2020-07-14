@@ -6,10 +6,7 @@ botaoAdicionar.addEventListener("click",function(){
     const form = document.querySelector("#form-adiciona");
     
     /* Pegando valor do form */
-    const nome = form.nome.value;
-    const altura = form.altura.value;
-    const peso = form.peso.value;
-    const gordura = form.gordura.value;
+    var paciente = obtemPacienteDoFormulario(form)
     
     /* Criando tags html */
     const pacienteTr = document.createElement("tr");
@@ -21,7 +18,7 @@ botaoAdicionar.addEventListener("click",function(){
     const imcTd = document.createElement("td");
 
     /* Passando valor do form p tag */
-    nomeTd.textContent = nome;
+    nomeTd.textContent = paciente.nome;
     pesoTd.textContent = peso;
     alturaTd.textContent = altura;
     gorduraTd.textContent = gordura;
@@ -39,3 +36,16 @@ botaoAdicionar.addEventListener("click",function(){
 
 
 });
+
+function obtemPacienteDoFormulario(form){
+
+    var paciente = {
+        nome: form.nome.value,
+        peso: form.peso.value,
+        altura: form.altura.value,
+        gordura: form.gordura.value,
+        imc: calculaImc(form.peso.value, form.altura.value)
+    }
+
+    return paciente;
+}
