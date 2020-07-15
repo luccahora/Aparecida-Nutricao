@@ -1,19 +1,19 @@
 /* Adicionando paciente na tabela */
 const botaoAdicionar = document.querySelector("#adicionar-paciente");
-botaoAdicionar.addEventListener("click",function(){
+botaoAdicionar.addEventListener("click", function () {
     event.preventDefault()
-    
+
     const form = document.querySelector("#form-adiciona");
-    
+
     /* Pegando valor do form */
     var paciente = obtemPacienteDoFormulario(form);
-    
+
     /* Montando paciente */
     var pacienteTr = montaTr(paciente);
 
-    const erro = validaPaciente(paciente);
+    const erros = validaPaciente(paciente);
 
-    if(erro.length > 0 ){
+    if (erros.length > 0) {
         const mensagemErro = document.querySelector("#mensagem-erro");
         mensagemErro.textContent = erro;
         return;
@@ -28,7 +28,7 @@ botaoAdicionar.addEventListener("click",function(){
 
 });
 
-function obtemPacienteDoFormulario(form){
+function obtemPacienteDoFormulario(form) {
 
     var paciente = {
         nome: form.nome.value,
@@ -40,22 +40,22 @@ function obtemPacienteDoFormulario(form){
 
     return paciente;
 }
-    /* Criando linha da tabela */
-function montaTr(paciente){
+/* Criando linha da tabela */
+function montaTr(paciente) {
     const pacienteTr = document.createElement("tr");
     pacienteTr.classList.add("paciente")
 
-    pacienteTr.appendChild(montaTd(paciente.nome,"info-nome"));
+    pacienteTr.appendChild(montaTd(paciente.nome, "info-nome"));
     pacienteTr.appendChild(montaTd(paciente.peso, "info-peso"));
     pacienteTr.appendChild(montaTd(paciente.altura, "info-altura"));
     pacienteTr.appendChild(montaTd(paciente.gordura, "info-gordura"));
     pacienteTr.appendChild(montaTd(paciente.imc, "info-imc"));
-    
+
     return pacienteTr;
 }
 
-    /* Criando a coluna e passando os dados */
-function montaTd(dado,classe){
+/* Criando a coluna e passando os dados */
+function montaTd(dado, classe) {
     const td = document.createElement("td");
     td.textContent = dado;
     td.classList.add(classe)
@@ -63,10 +63,16 @@ function montaTd(dado,classe){
     return td;
 }
 
-function validaPaciente(paciente){
-    if(validaPeso(paciente.peso)){
-        return "";
-    } else {
-        return "O Peso é inválido";
-    }
+function validaPaciente(paciente) {
+    var erros = [];
+
+    if (!validaPeso(paciente.peso))
+        erros.push("Peso é inválido");
+
+    if (!validaAltura(paciente.altura))
+        erros.push("Altura é inválida!")
+
+
+    return erros;
+
 }
