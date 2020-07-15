@@ -8,8 +8,13 @@ botaoAdicionar.addEventListener("click",function(){
     /* Pegando valor do form */
     var paciente = obtemPacienteDoFormulario(form);
     
-    /* Criando tags html */
+    /* Montando paciente */
     var pacienteTr = montaTr(paciente);
+
+    if(!validaPaciente(paciente)){
+        console.log("Paciente Inválido");
+        return;
+    }
 
     /* Add dados na tabela */
     const tabela = document.querySelector("#tabela-pacientes");
@@ -53,4 +58,12 @@ function montaTd(dado,classe){
     td.classList.add(classe)
 
     return td;
+}
+
+function validaPaciente(paciente){
+    if(validaPeso(paciente.peso)){
+        return true;
+    } else {
+        return false;
+    }
 }
