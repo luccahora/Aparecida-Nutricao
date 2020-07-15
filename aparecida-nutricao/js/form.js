@@ -12,10 +12,9 @@ botaoAdicionar.addEventListener("click", function () {
     var pacienteTr = montaTr(paciente);
 
     const erros = validaPaciente(paciente);
-
+    
     if (erros.length > 0) {
-        const mensagemErro = document.querySelector("#mensagem-erro");
-        mensagemErro.textContent = erro;
+        exibeMensagensDeErro(erros)
         return;
     }
 
@@ -27,6 +26,15 @@ botaoAdicionar.addEventListener("click", function () {
 
 
 });
+
+function exibeMensagensDeErro(erros){
+    const ul = document.querySelector("#mensagens-erro");
+    erros.forEach(function(erro){
+        const li = document.createElement("li");
+        li.textContent = erro;
+        ul.appendChild(li)
+    });
+}
 
 function obtemPacienteDoFormulario(form) {
 
