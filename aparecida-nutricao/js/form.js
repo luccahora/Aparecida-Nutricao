@@ -29,6 +29,8 @@ botaoAdicionar.addEventListener("click", function () {
 
 function exibeMensagensDeErro(erros) {
     const ul = document.querySelector("#mensagens-erro");
+    ul.innerHTML = "";
+    
     erros.forEach(function (erro) {
         const li = document.createElement("li");
         li.textContent = erro;
