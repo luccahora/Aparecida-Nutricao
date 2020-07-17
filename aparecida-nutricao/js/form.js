@@ -27,8 +27,6 @@ botaoAdicionar.addEventListener("click", function () {
     /* Limpando erros ao inserir dados */
     const mensagensErro = document.querySelector("#mensagens-erro");
     mensagensErro.innerHTML = "";
-
-
 });
 
 function exibeMensagensDeErro(erros) {
