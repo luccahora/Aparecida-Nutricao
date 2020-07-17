@@ -24,13 +24,17 @@ botaoAdicionar.addEventListener("click", function () {
 
     form.reset();
 
+    /* Limpando erros ao inserir dados */
+    const mensagensErro = document.querySelector("#mensagens-erro");
+    mensagensErro.innerHTML = "";
+
 
 });
 
 function exibeMensagensDeErro(erros) {
     const ul = document.querySelector("#mensagens-erro");
     ul.innerHTML = "";
-    
+
     erros.forEach(function (erro) {
         const li = document.createElement("li");
         li.textContent = erro;
