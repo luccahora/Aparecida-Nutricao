@@ -24,8 +24,6 @@ botaoBuscar.addEventListener("click", function () {
         } else {
             erroAjax.classList.remove("invisivel")
         }
-
-
     })
 
     xhr.send();
