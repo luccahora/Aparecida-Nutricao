@@ -7,7 +7,13 @@ botaoBuscar.addEventListener("click", function(){
     xhr.open("GET", "http://api-pacientes.herokuapp.com/pacientes");
 
     xhr.addEventListener("load", function(){
-        console.log(xhr.responseText);
+        var resposta = xhr.responseText;
+        /* json para array */
+        var pacientes = JSON.parse(resposta);
+        
+        pacientes.forEach(paciente => {
+            adicionaPacienteNaTabela(paciente)
+        });
     })
 
     xhr.send();
