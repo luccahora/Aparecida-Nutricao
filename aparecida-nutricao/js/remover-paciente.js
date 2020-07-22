@@ -10,6 +10,4 @@ tabela.addEventListener("dblclick", function (event) {
     setTimeout(function () {
         paiDoAlvo.remove();
     }, 300)
-
-
 })
