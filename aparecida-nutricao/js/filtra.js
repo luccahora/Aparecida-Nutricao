@@ -9,7 +9,6 @@ campoFiltro.addEventListener("input", function () {
             const paciente = pacientes[i];
             var tdNome = paciente.querySelector(".info-nome");
             const nome = tdNome.textContent;
-
             /* filtro letra a letra */
             var expressao = new RegExp(this.value, "i");
             if (!expressao.test(nome)) {
