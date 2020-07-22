@@ -27,5 +27,4 @@ botaoBuscar.addEventListener("click", function () {
     })
 
     xhr.send();
-
 })
