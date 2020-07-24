@@ -13,12 +13,12 @@ botaoBuscar.addEventListener("click", function () {
 
         if (xhr.status == 200) {
             erroAjax.classList.add("invisivel");
-           
+
             var resposta = xhr.responseText;
-           
+
             /* json para array */
             var pacientes = JSON.parse(resposta);
-            
+
             /* add pacientes na tabela */
             pacientes.forEach(paciente => {
                 adicionaPacienteNaTabela(paciente)
