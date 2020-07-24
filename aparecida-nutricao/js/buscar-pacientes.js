@@ -1,3 +1,5 @@
+/* Consumir API de pacientes */
+
 var botaoBuscar = document.querySelector("#buscar-pacientes");
 
 botaoBuscar.addEventListener("click", function () {
