@@ -55,6 +55,7 @@ function obtemPacienteDoFormulario(form) {
 
     return paciente;
 }
+
 /* Criando linha da tabela */
 function montaTr(paciente) {
     const pacienteTr = document.createElement("tr");
@@ -102,7 +103,6 @@ function validaPaciente(paciente) {
     if (paciente.altura.length == 0) {
         erros.push("Altura não pode ser em branco.")
     }
-
 
     return erros;
 }
