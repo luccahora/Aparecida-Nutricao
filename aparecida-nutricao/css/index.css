@@ -44,6 +44,10 @@ section{
 	overflow: hidden;
 }
 
+#titulo-form{
+	margin-top: 20px;
+}
+
 section h2{
 	font-size: 3em;
 	display: block;
@@ -124,9 +128,7 @@ button[disabled=disabled], button:disabled {
 	border-color: darkgray;
 }
 
-#titulo-form{
-	margin-top: 20px;
-}
+
 
 .adicionar-paciente{
     margin-top: 30px;
