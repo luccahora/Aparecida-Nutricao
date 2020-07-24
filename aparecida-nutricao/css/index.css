@@ -128,6 +128,10 @@ button[disabled=disabled], button:disabled {
     margin-top: 30px;
 }
 
+.grupo input{
+	border-radius: 5px;
+}
+
 .campo-invalido{
 	border: 1px solid red;
 }
