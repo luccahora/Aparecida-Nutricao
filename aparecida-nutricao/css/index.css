@@ -124,6 +124,10 @@ button[disabled=disabled], button:disabled {
 	border-color: darkgray;
 }
 
+#titulo-form{
+	margin-top: 20px;
+}
+
 .adicionar-paciente{
     margin-top: 30px;
 }
